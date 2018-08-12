@@ -5,7 +5,6 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val viewModel: MainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         var i = 1
         button.setOnClickListener {
-            val data = Data(arrayListOf())
+            val data = Data("我是" + i.toString(), arrayListOf())
             for (item in 1..i) {
                 data.list.add(item.toString())
             }
